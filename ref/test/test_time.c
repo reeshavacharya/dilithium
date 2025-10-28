@@ -23,7 +23,7 @@
 
 // Number of iterations per benchmark
 #ifndef NTESTS
-#define NTESTS 1000
+#define NTESTS 10000
 #endif
 
 #ifndef DILITHIUM_MODE
