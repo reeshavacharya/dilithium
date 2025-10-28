@@ -28,6 +28,9 @@ speed: \
   test/test_speed2 \
   test/test_speed3 \
   test/test_speed5 \
+  test/test_time2 \
+  test/test_time3 \
+  test/test_time5
 
 shared: \
   libpqcrystals_dilithium2_ref.so \
@@ -99,6 +102,18 @@ test/test_speed5: test/test_speed.c test/speed_print.c test/speed_print.h \
 	$(CC) $(CFLAGS) -DDILITHIUM_MODE=5 \
 	  -o $@ $< test/speed_print.c test/cpucycles.c randombytes.c \
 	  $(KECCAK_SOURCES)
+
+test/test_time2: test/test_time.c randombytes.c $(KECCAK_SOURCES) $(KECCAK_HEADERS)
+	$(CC) $(CFLAGS) -DDILITHIUM_MODE=2 \
+	  -o $@ $< randombytes.c $(KECCAK_SOURCES)
+
+test/test_time3: test/test_time.c randombytes.c $(KECCAK_SOURCES) $(KECCAK_HEADERS)
+	$(CC) $(CFLAGS) -DDILITHIUM_MODE=3 \
+	  -o $@ $< randombytes.c $(KECCAK_SOURCES)
+
+test/test_time5: test/test_time.c randombytes.c $(KECCAK_SOURCES) $(KECCAK_HEADERS)
+	$(CC) $(CFLAGS) -DDILITHIUM_MODE=5 \
+	  -o $@ $< randombytes.c $(KECCAK_SOURCES)
 
 test/test_mul: test/test_mul.c randombytes.c $(KECCAK_SOURCES) $(KECCAK_HEADERS)
 	$(CC) $(CFLAGS) -UDBENCH -o $@ $< randombytes.c $(KECCAK_SOURCES)
