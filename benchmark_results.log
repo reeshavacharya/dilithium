@@ -1,0 +1,77 @@
+=== Dilithium benchmark run ===
+Started: Wed 29 Oct 2025 04:45:10 PM UTC
+
+Building benchmarks...
+--- make build output ---
+make: 'test/test_time2' is up to date.
+make: 'test/test_time3' is up to date.
+make: 'test/test_time5' is up to date.
+--- end build output ---
+
+=== Dilithium Mode 2 ===
+Running: ./test/test_time2
+DILITHIUM_MODE=2
+CRYPTO_PUBLICKEYBYTES=1312, CRYPTO_SECRETKEYBYTES=2560, CRYPTO_BYTES=2420
+Context: "dilithium-bench" (len=15)
+Running 10000 iterations for each operation...
+
+Key Generation:
+  min: 0.072 ms
+  max: 0.440 ms
+  avg: 0.080 ms
+
+Signing (detached):
+  min: 0.140 ms
+  max: 2.630 ms
+  avg: 0.362 ms
+
+Verification (open):
+  min: 0.081 ms
+  max: 0.201 ms
+  avg: 0.085 ms
+
+=== Dilithium Mode 3 ===
+Running: ./test/test_time3
+DILITHIUM_MODE=3
+CRYPTO_PUBLICKEYBYTES=1952, CRYPTO_SECRETKEYBYTES=4032, CRYPTO_BYTES=3309
+Context: "dilithium-bench" (len=15)
+Running 10000 iterations for each operation...
+
+Key Generation:
+  min: 0.133 ms
+  max: 0.270 ms
+  avg: 0.138 ms
+
+Signing (detached):
+  min: 0.214 ms
+  max: 3.209 ms
+  avg: 0.553 ms
+
+Verification (open):
+  min: 0.133 ms
+  max: 0.264 ms
+  avg: 0.134 ms
+
+=== Dilithium Mode 5 ===
+Running: ./test/test_time5
+DILITHIUM_MODE=5
+CRYPTO_PUBLICKEYBYTES=2592, CRYPTO_SECRETKEYBYTES=4896, CRYPTO_BYTES=4627
+Context: "dilithium-bench" (len=15)
+Running 10000 iterations for each operation...
+
+Key Generation:
+  min: 0.203 ms
+  max: 0.317 ms
+  avg: 0.208 ms
+
+Signing (detached):
+  min: 0.328 ms
+  max: 4.230 ms
+  avg: 0.667 ms
+
+Verification (open):
+  min: 0.217 ms
+  max: 0.381 ms
+  avg: 0.219 ms
+
+Finished: Wed 29 Oct 2025 04:45:34 PM UTC
